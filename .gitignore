@@ -1,5 +1,8 @@
 reated by https://www.gitignore.io
 
+### TextMiningSeinfeld Specific ###
+data/
+
 ### Linux ###
 *~
 
