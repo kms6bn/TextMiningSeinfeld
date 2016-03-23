@@ -1,0 +1,29 @@
+""" Combines each utterance for an episode
+
+
+"""
+import pandas as pd
+
+""" Reads a single file and transforms it into the necessary output
+
+    Columns:
+        "text","speaker","season_number","episode_number","uid","sentence_number"
+
+"""
+
+
+def main():
+    input_file = "./data/script_by_utterance.csv"
+    output_file = "./data/full_script_by_episode.csv"
+
+    input_df = pd.read_csv(input_file, sep=',', header=0)
+    df = input_df.groupby(['season_number', 'episode_number'])['text'].apply(list).reset_index()
+    df['text'] = df['text'].map(lambda x: str(x)).map(
+        lambda y: ''.join(y).replace('\'', '').replace('\"', '').replace(',', ''))
+    df.to_csv(output_file)
+    # ''.join(str(df['text'][0])).replace('\'','').replace('\"','').replace(',','')
+    return 0
+
+
+if __name__ == "__main__":
+    main()
