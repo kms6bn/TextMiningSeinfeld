@@ -64,7 +64,7 @@ Season,Released,Episode,imdbRating,Title,No.overall,No.inSeason,Directed,Written
 4,1993-04-15,21,8.7,The Smelly Car,61,21,Tom Cherones,Larry David & Peter Mehlman,422,25,0.348
 4,1993-05-13,22,8.5,The Handicap Spot,62,22,Tom Cherones,Larry David,420,27.6,0.3079710145
 4,1993-05-20,23,8.9,The Pilot,63–64,23,Tom Cherones,Larry David,423/424,32.8,0.2713414634
-4,1993-05-20,23,8.9,The Pilot,63–64,24,Tom Cherones,Larry David,423/424,32.8,0.2713414634
+4,1993-05-20,24,8.9,The Pilot,63–64,24,Tom Cherones,Larry David,423/424,32.8,0.2713414634
 5,1993-09-16,1,8.8,The Mango,65,1,Tom Cherones,"Story by: Lawrence H. Levy Teleplay by: Lawrence H. Levy and Larry David",501,28.2,0.3120567376
 5,1993-09-23,2,9.1,The Puffy Shirt,66,2,Tom Cherones,Larry David,503,29.5,0.3084745763
 5,1993-09-30,3,8.5,The Glasses,67,3,Tom Cherones,Tom Gammill & Max Pross,502,28.7,0.2961672474
@@ -83,10 +83,10 @@ Season,Released,Episode,imdbRating,Title,No.overall,No.inSeason,Directed,Written
 5,1994-02-24,16,8.1,The Stand-In,80,16,Tom Cherones,Larry David,516,25.4,0.3188976378
 5,1994-03-17,17,8.2,The Wife,81,17,Tom Cherones,Peter Mehlman,517,30.7,0.2671009772
 5,1994-04-28,18,8.7,The Raincoats,82–83,18,Tom Cherones,Tom Gammill & Max Pross and Larry David & Jerry Seinfeld,519/520,29.6,0.2939189189
-5,1994-04-28,18,8.7,The Raincoats,82–83,19,Tom Cherones,Tom Gammill & Max Pross and Larry David & Jerry Seinfeld,519/520,29.6,0.2939189189
-5,1994-05-05,19,8.9,The Fire,84,20,Tom Cherones,Larry Charles,518,27.6,0.3224637681
-5,1994-05-12,20,9.2,The Hamptons,85,21,Tom Cherones,Peter Mehlman & Carol Leifer,522,24.5,0.3755102041
-5,1994-05-19,21,9.5,The Opposite,86,22,Tom Cherones,Andy Cowan and Larry David & Jerry Seinfeld,521,30.1,0.3156146179
+5,1994-04-28,19,8.7,The Raincoats,82–83,19,Tom Cherones,Tom Gammill & Max Pross and Larry David & Jerry Seinfeld,519/520,29.6,0.2939189189
+5,1994-05-05,20,8.9,The Fire,84,20,Tom Cherones,Larry Charles,518,27.6,0.3224637681
+5,1994-05-12,21,9.2,The Hamptons,85,21,Tom Cherones,Peter Mehlman & Carol Leifer,522,24.5,0.3755102041
+5,1994-05-19,22,9.5,The Opposite,86,22,Tom Cherones,Andy Cowan and Larry David & Jerry Seinfeld,521,30.1,0.3156146179
 6,1994-09-22,1,8.2,The Chaperone,87,1,Andy Ackerman,Larry David and Bill Masters & Bob Shaw,601,32.8,0.25
 6,1994-09-29,2,8.4,The Big Salad,88,2,Andy Ackerman,Larry David,602,32.4,0.2592592593
 6,1994-10-06,3,8.4,The Pledge Drive,89,3,Andy Ackerman,Tom Gammill & Max Pross,603,29.8,0.2818791946
@@ -101,16 +101,16 @@ Season,Released,Episode,imdbRating,Title,No.overall,No.inSeason,Directed,Written
 6,1995-01-19,12,8.8,The Label Maker,98,12,Andy Ackerman,Alec Berg & Jeff Schaffer,611,36.2,0.2430939227
 6,1995-01-26,13,8.4,The Scofflaw,99,13,Andy Ackerman,Peter Mehlman,613,33.4,0.251497006
 6,1995-02-02,14,7.6,Highlights of a Hundred,100–101,14,Andy Ackerman,Peter Mehlman,623/624,34,0.2235294118
-6,1995-02-02,14,7.6,Highlights of a Hundred,100–101,15,Andy Ackerman,Peter Mehlman,623/624,34,0.2235294118
-6,1995-02-09,15,8.5,The Beard,102,16,Andy Ackerman,Carol Leifer,615,32.9,0.2583586626
-6,1995-02-16,16,8.4,The Kiss Hello,103,17,Andy Ackerman,Larry David & Jerry Seinfeld,614,33.4,0.251497006
-6,1995-02-23,17,8.6,The Doorman,104,18,Andy Ackerman,Tom Gammill & Max Pross,616,33.4,0.2574850299
-6,1995-03-16,18,9.2,The Jimmy,105,19,Andy Ackerman,Gregg Kavet & Andy Robin,617,31.1,0.2958199357
-6,1995-04-06,19,8.6,The Doodle,106,20,Andy Ackerman,Alec Berg & Jeff Schaffer,618,30.7,0.2801302932
-6,1995-04-27,20,8.9,The Fusilli Jerry,107,21,Andy Ackerman,"Story by: Marjorie Gross & Jonathan Gross and Ron Hauge & Charlie Rubin Teleplay by: Marjorie Gross",619,28.2,0.3156028369
-6,1995-05-04,21,8.3,The Diplomat's Club,108,22,Andy Ackerman,Tom Gammill & Max Pross,620,28.9,0.2871972318
-6,1995-05-11,22,8.6,The Face Painter,109,23,Andy Ackerman,"Story by: Larry David and Fred Stoller Teleplay by Larry David",622,26.5,0.3245283019
-6,1995-05-18,23,8.3,The Understudy,110,24,Andy Ackerman,Marjorie Gross & Carol Leifer,621,29.8,0.2785234899
+6,1995-02-02,15,7.6,Highlights of a Hundred,100–101,15,Andy Ackerman,Peter Mehlman,623/624,34,0.2235294118
+6,1995-02-09,16,8.5,The Beard,102,16,Andy Ackerman,Carol Leifer,615,32.9,0.2583586626
+6,1995-02-16,17,8.4,The Kiss Hello,103,17,Andy Ackerman,Larry David & Jerry Seinfeld,614,33.4,0.251497006
+6,1995-02-23,18,8.6,The Doorman,104,18,Andy Ackerman,Tom Gammill & Max Pross,616,33.4,0.2574850299
+6,1995-03-16,19,9.2,The Jimmy,105,19,Andy Ackerman,Gregg Kavet & Andy Robin,617,31.1,0.2958199357
+6,1995-04-06,20,8.6,The Doodle,106,20,Andy Ackerman,Alec Berg & Jeff Schaffer,618,30.7,0.2801302932
+6,1995-04-27,21,8.9,The Fusilli Jerry,107,21,Andy Ackerman,"Story by: Marjorie Gross & Jonathan Gross and Ron Hauge & Charlie Rubin Teleplay by: Marjorie Gross",619,28.2,0.3156028369
+6,1995-05-04,22,8.3,The Diplomat's Club,108,22,Andy Ackerman,Tom Gammill & Max Pross,620,28.9,0.2871972318
+6,1995-05-11,23,8.6,The Face Painter,109,23,Andy Ackerman,"Story by: Larry David and Fred Stoller Teleplay by Larry David",622,26.5,0.3245283019
+6,1995-05-18,24,8.3,The Understudy,110,24,Andy Ackerman,Marjorie Gross & Carol Leifer,621,29.8,0.2785234899
 7,1995-09-21,1,8.7,The Engagement,111,1,Andy Ackerman,Larry David,701,37.6,0.2313829787
 7,1995-09-28,2,8.4,The Postponement,112,2,Andy Ackerman,Larry David,702,34.5,0.2434782609
 7,1995-10-05,3,8.3,The Maestro,113,3,Andy Ackerman,Larry David,703,34.6,0.2398843931
@@ -125,16 +125,16 @@ Season,Released,Episode,imdbRating,Title,No.overall,No.inSeason,Directed,Written
 7,1996-01-25,12,8.8,The Caddy,122,12,Andy Ackerman,Gregg Kavet & Andy Robin,712,32,0.275
 7,1996-02-01,13,8.4,The Seven,123,13,Andy Ackerman,Alec Berg & Jeff Schaffer,713,37.1,0.2264150943
 7,1996-02-08,14,8.7,The Cadillac,124–125,14,Andy Ackerman,Larry David & Jerry Seinfeld,714/717,35.9,0.2423398329
-7,1996-02-08,14,8.7,The Cadillac,124–125,15,Andy Ackerman,Larry David & Jerry Seinfeld,714/717,35.9,0.2423398329
-7,1996-02-15,15,8.6,The Shower Head,126,16,Andy Ackerman,Peter Mehlman & Marjorie Gross,715,32.3,0.26625387
-7,1996-02-22,16,8.4,The Doll,127,17,Andy Ackerman,Tom Gammill & Max Pross,716,32.9,0.2553191489
-7,1996-03-07,17,8.1,The Friars Club,128,18,Andy Ackerman,David Mandel,718,32.7,0.247706422
-7,1996-04-04,18,8.4,The Wig Master,129,19,Andy Ackerman,Spike Feresten,719,30.5,0.2754098361
-7,1996-04-25,19,8.9,The Calzone,130,20,Andy Ackerman,Alec Berg & Jeff Schaffer,720,28.5,0.3122807018
-7,1996-05-02,20,8.9,The Bottle Deposit,131–132,21,Andy Ackerman,Gregg Kavet & Andy Robin,721/722,32.4,0.274691358
-7,1996-05-02,20,8.9,The Bottle Deposit,131–132,22,Andy Ackerman,Gregg Kavet & Andy Robin,721/722,32.4,0.274691358
-7,1996-05-09,21,8.5,The Wait Out,133,23,Andy Ackerman,"Story by: Peter Mehlman & Matt Selman Teleplay by: Peter Mehlman",723,29.9,0.2842809365
-7,1996-05-16,22,8.9,The Invitations,134,24,Andy Ackerman,Larry David,724,33.2,0.2680722892
+7,1996-02-08,15,8.7,The Cadillac,124–125,15,Andy Ackerman,Larry David & Jerry Seinfeld,714/717,35.9,0.2423398329
+7,1996-02-15,16,8.6,The Shower Head,126,16,Andy Ackerman,Peter Mehlman & Marjorie Gross,715,32.3,0.26625387
+7,1996-02-22,17,8.4,The Doll,127,17,Andy Ackerman,Tom Gammill & Max Pross,716,32.9,0.2553191489
+7,1996-03-07,18,8.1,The Friars Club,128,18,Andy Ackerman,David Mandel,718,32.7,0.247706422
+7,1996-04-04,19,8.4,The Wig Master,129,19,Andy Ackerman,Spike Feresten,719,30.5,0.2754098361
+7,1996-04-25,20,8.9,The Calzone,130,20,Andy Ackerman,Alec Berg & Jeff Schaffer,720,28.5,0.3122807018
+7,1996-05-02,21,8.9,The Bottle Deposit,131–132,21,Andy Ackerman,Gregg Kavet & Andy Robin,721/722,32.4,0.274691358
+7,1996-05-02,22,8.9,The Bottle Deposit,131–132,22,Andy Ackerman,Gregg Kavet & Andy Robin,721/722,32.4,0.274691358
+7,1996-05-09,23,8.5,The Wait Out,133,23,Andy Ackerman,"Story by: Peter Mehlman & Matt Selman Teleplay by: Peter Mehlman",723,29.9,0.2842809365
+7,1996-05-16,24,8.9,The Invitations,134,24,Andy Ackerman,Larry David,724,33.2,0.2680722892
 8,1996-09-19,1,8.5,The Foundation,135,1,Andy Ackerman,Alec Berg & Jeff Schaffer,801,33.7,0.2522255193
 8,1996-09-26,2,8.3,The Soul Mate,136,2,Andy Ackerman,Peter Mehlman,802,33.2,0.25
 8,1996-10-03,3,9.2,The Bizarro Jerry,137,3,Andy Ackerman,David Mandel,803,31.6,0.2911392405
@@ -178,6 +178,6 @@ Season,Released,Episode,imdbRating,Title,No.overall,No.inSeason,Directed,Written
 9,1998-04-30,19,8.2,The Maid,175,19,Andy Ackerman,"Story by: Alec Berg & David Mandel & Jeff Schaffer and Kit Boss & Peter Mehlman Teleplay by: Alec Berg & David Mandel & Jeff Schaffer",919,33.3,0.2462462462
 9,1998-05-07,20,8.3,The Puerto Rican Day,176,20,Andy Ackerman,"Alec Berg, Jennifer Crittenden, Spike Feresten, Bruce Eric Kaplan, Gregg Kavet, Steve Koren, David Mandel, Dan O'Keefe, Andy Robin, Jeff Schaffer",920,38.8,0.2139175258
 9,1998-05-14,21,8.3,The Chronicle,177–178,21,Andy Ackerman,Darin Henry,921/922,58.5,0.1418803419
-9,1998-05-14,21,8.3,The Chronicle,177–178,22,Andy Ackerman,Darin Henry,921/922,58.5,0.1418803419
-9,1998-05-14,22,8.1,The Finale,179–180,23,Andy Ackerman,Larry David,923/924,76.3,0.1061598952
-9,1998-05-14,22,8.1,The Finale,179–180,24,Andy Ackerman,Larry David,923/924,76.3,0.1061598952
+9,1998-05-14,22,8.3,The Chronicle,177–178,22,Andy Ackerman,Darin Henry,921/922,58.5,0.1418803419
+9,1998-05-14,23,8.1,The Finale,179–180,23,Andy Ackerman,Larry David,923/924,76.3,0.1061598952
+9,1998-05-14,24,8.1,The Finale,179–180,24,Andy Ackerman,Larry David,923/924,76.3,0.1061598952
