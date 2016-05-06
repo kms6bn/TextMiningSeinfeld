@@ -71,7 +71,7 @@
 
 %
 % --- Author Metadata here ---
-\conferenceinfo{CS Text Mining}{'97 El Paso, Texas USA}
+\conferenceinfo{CS Text Mining}{Spring '16}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
@@ -146,7 +146,7 @@ Marcus Rosti\\
 
 \maketitle
 \begin{abstract}
-This paper discusses the application of text mining techniques and regression analysis to two 90s sitcoms as a means to predict the shows' viewership and rating. We collected ratings from IMDb and viewership from Wikipedia's reported Nielsen ratings. We use tfidf as predictors to our regression model. In addition to that, we used the target shuffling technique to verify the accuracy of our predictive model.
+This paper discusses the application of text mining techniques and regression analysis to two 90s sitcoms as a means to predict the shows' viewership and rating. We collected ratings from IMDb and viewership from Wikipedia's reported Nielsen ratings. We use tfidf as predictors to our regression model.
 % TODO this needs more information 
 \end{abstract}
 
@@ -159,26 +159,74 @@ This paper discusses the application of text mining techniques and regression an
 \section{Introduction}
 TV shows cost an enormous amount of money. For instance just to film and develop a pilot, Priceecomics says it costs \$2 million to develop a typically 30 minute comedy or over \$5 million to make an hour long drama and even that is a low estimate.\footnote{http://priceonomics.com/the-economics-of-a-hit-tv-show/} That's a substantial investment into a project that may never be seen by the public. In the same article they say 98\% of scripts fail to be made into pilots and of those, around half get a full season and an even smaller percentage make it past one season. 
 
-This creative and expensive process touches a number of people starting from pitching ideas for shows to actual filming the season. Our research touches on a middle ground of that process. We analyze the relationship between the words of the script and its outcome in ratings, both in quality and in viewership. In other areas, text mining has 
+This creative and expensive process touches a number of people starting from pitching ideas for shows to actual filming the season. The step we focus on has to do with the script screening and development process. A production company will field many ideas and make a call for scripts based on those ideas. A producer must then screen through scripts and rate them only on their intuition or even some cognitive bias towards the writer. A producers time is valuable but on top of that the chosen script must maximize the chance of developing into a hit show.  
 
-\section{Literature Review}
+Our research addresses automating the script review process or at least providing assistance to the reviewer via an automated system. We apply the text mining ideas of text preprocessing and feature engineering to predict the continuous values of IMDb rating and Nielsen viewership. To motivate those two values, a producer cares about two things when developing a show. On the less import end (monetarily wise), the show should be a high quality show, so the script needs to be well written and should receive a high IMDb value when it airs. But more importantly the show needs to be viewed by many millions people to drive advertising or generate more subscriptions in the case of HBO or Netflix. Thus again, our model needs to be able to predict with some certainty these values.
+
+We used two 90s Sitcoms, both being widely viewed and rated, to at least validate that our method could accurately model that response. Given that these shows have proliferated that culture we expect to see at least come predictive power to our approach and conclude that there is a correlation between the script and the audience response.
+
+\section{Literature Review} % Maybe this could just be done in the introduction
+
+Researchers have explored sentiment analysis of text thoroughly. Bo Pang and Lillian Lee explored a multiclass approach to categorizing movie reviews as either positive, average and negative. They used support vector machines and a one versus all separation in order to classify them \cite{Pang:2005:SSE:1219840.1219855}. That research expanded a traditional binary classification into a multivalued problem. 
+
+In a separate field, Saxena explored applying a data mining techniques to screen resumes as part of a job application. In this case, the author explains that as the internet has become more popular, people are able to apply to many more jobs thus online job postings become flooded with resumes. To parse through these, they should apply several information retervial techniques but this paper focused on skills extraction, finding unique features and dealing with the specific setting of the resume. They had mixed results and concluced that more research would be required to find a more confident parser \cite{Charul}.
+
+Lastly, Pivotal, a data sciences research company, attempted a script reviewer with success. They extracted information from scripts that included speaker and scene delegation, for which the did extensive feature engineering. For example, they were able to distill the personalities of speakers via topic modeling and that feature engineering and include this with their linear model \cite{Pivotal}. However, the authors did not reveal more intimate details of their modeling and approach.  
 
 \section{Method Overview}
+Our model follows a standard pipelined approach and employs 10 fold cross validation to justify the results.
 
-\subsection{Text Parsing}
+\subsection{Data Parsing}
+stemming tokenizing stopward removal
+
+The two response variables we used were again the IMDb mean rating for the episode and the Nielsen rating for viewership rating. For the IMDb rating, we paired the episode with its corresponding rating. The rating of the episode should stand on its own since it could come days weeks or years after the actual episode airs. Our claim here is that the rating is independent of the timing of the episodes air. However, for the Nielsen rating, it would not make sense to pair the episodes viewership with the actual episode. Consider someone watching the show. That person has already come to the decision to watch the show independent of the script because it is unfolding before them. We, instead, map the next episodes viewership with that episode; moreover, Script$_i$ corresponds to Viewership$_{i+1}$. We model it that way because if a person were to watch an episode, enjoy watching it because of the script and then be more likely to watch the next one. In this case, we capture the temporal aspect of the airing.
 
 \subsection{Regression Analysis}
+linear regression because it's response is continuously defined and because of it's simple nature
 
 \subsection{Model Validation}
+We followed a testing procedure based on 10 fold cross validation. In this procedure we compared our regression model, built on each training fold, with the mean of the response, again on the training fold. We use our model to predict the response on the test set and compare it to the mean of the response on the training set. Then using a two sample t test to make the claim that our model exceeds the performance of the mean.
 
-\subsubsection{Target Shuffling}
+\begin{equation}
+t^* = \frac{\bar{Y}_1 - \bar{Y}_2}{\sqrt{s_1^2/N_1 + s_2^2/N_2}}
+\end{equation}
+
+For our claim to be valid we would have to show that our model outperforms the mean at a significance level of $\alpha = .05$ and a t value of 1.812. However, 
+
 
 \section{Analysis}
-We're taking our model to wall street
+
 
 \section{Future Work}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% THIS IS ALL JUNK!! BUT I DON"T WANT TO REMOVE IT YET
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The {\secit Body} of The Paper}
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
