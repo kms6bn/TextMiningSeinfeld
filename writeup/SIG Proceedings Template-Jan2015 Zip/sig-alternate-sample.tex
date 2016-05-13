@@ -146,7 +146,7 @@ Marcus Rosti\\
 
 \maketitle
 \begin{abstract}
-This paper discusses the application of text mining techniques and regression analysis to two 90s sitcoms as a means to predict the shows' viewership and rating. We collected ratings from IMDb and viewership from Wikipedia's reported Nielsen ratings. We use tf-idf as predictors to our regression model.
+This paper discusses the application of text mining techniques and regression analysis to two 90s sitcoms as a means to predict the shows' viewership and rating. We collected ratings from IMDb and viewership from Wikipedia's reported Nielsen ratings. We apply TF-IDF and Latent Dirichlet Allocation to a vector space model of sitcom scripts, utilizing the results as predictors to our regression model.
 % TODO this needs more information 
 \end{abstract}
 
@@ -157,48 +157,50 @@ This paper discusses the application of text mining techniques and regression an
 \keywords{Text Mining; Regression Analysis; Machine Learning; Automated Systems}
 
 \section{Introduction}
-TV shows cost an enormous amount of money. For instance just to film and develop a pilot, Priceecomics says it costs \$2 million to develop a typically 30 minute comedy or over \$5 million to make an hour long drama and even that is a low estimate.\footnote{http://priceonomics.com/the-economics-of-a-hit-tv-show/} That's a substantial investment into a project that may never be seen by the public. In the same article they say 98\% of scripts fail to be made into pilots and of those, around half get a full season and an even smaller percentage make it past one season. 
+Producing a television show is an enormously expensive exercise. For example, according to Priceonomics, a pilot conservatively costs \$2 million to develop a typically 30 minute comedy or over \$5 million to produce an hour long drama.\footnote{http://priceonomics.com/the-economics-of-a-hit-tv-show/} That's a substantial investment into a project that may never be seen by the public. Additionally, 98\% of scripts fail to be made into pilots and of those, only about half will lead to a full season.
 
-This creative and expensive process touches a number of people starting from pitching ideas for shows to actual filming the season. The step we focus on has to do with the script screening and development process. A production company will field many ideas and make a call for scripts based on those ideas. A producer must then screen through scripts and rate them only on their intuition or even some cognitive bias towards the writer. A producers time is valuable but on top of that the chosen script must maximize the chance of developing into a hit show.  
+This creative and expensive process touches numerous individuals, from pitching ideas for shows to actual filming the season. We will focus on the inefficient script screening and development process. Typically, a production company will field many ideas and make a call for scripts based on those ideas. A producer must then screen through scripts and manually rate them using only their intuition, which could be swayed by cognitive bias towards a particular writer. In addition to the valuable time a producer wastes reading poor scripts, the chosen script must maximize the chance of developing into a hit show. 
 
-Our research addresses automating the script review process or at least providing assistance to the reviewer via an automated system. We apply the text mining ideas of text preprocessing and feature engineering to predict the continuous values of IMDb rating and Nielsen viewership. To motivate those two values, a producer cares about two things when developing a show. On the less import end (monetarily wise), the show should be a high quality show, so the script needs to be well written and should receive a high IMDb value when it airs. But more importantly the show needs to be viewed by many millions people to drive advertising or generate more subscriptions in the case of HBO or Netflix. Thus again, our model needs to be able to predict with some certainty these values.
+Our research addresses automating the script review process by providing assistance to the reviewer via an automated system. We apply text preprocessing and feature engineering to predict the continuous values of IMDb ratings and Nielsen viewership ratings. We chose these two values as our prediction value because a producer primarily cares about two things when developing a show: the show should be high quality and widely viewed. To measure high quality, the script needs to be well written and should receive a high IMDb value when it airs. To measure successful viewership, the show needs to be viewed by many millions people to drive advertising (or generate more subscriptions in the case of subscription services like HBO and Netflix). For our model to be successful, it will need to be able to predict these values with substantial certainty.
 
-We used two 90s Sitcoms, both being widely viewed and rated, to at least validate that our method could accurately model that response. Given that these shows have proliferated that culture we expect to see at least come predictive power to our approach and conclude that there is a correlation between the script and the audience response.
+We used two 90s Sitcoms, both being widely viewed and rated, to train and test our models. Given that these shows have proliferated American culture, we expect to see some predictive power to our approach and conclude that there is a correlation between the script and the audience response.
 
 \section{Literature Review} % Maybe this could just be done in the introduction
 
-Researchers have explored sentiment analysis of text thoroughly. Bo Pang and Lillian Lee explored a multiclass approach to categorizing movie reviews as either positive, average and negative. They used support vector machines and a one versus all separation in order to classify them \cite{Pang:2005:SSE:1219840.1219855}. That research expanded a traditional binary classification into a multivalued problem. 
+Researchers have explored sentiment analysis of text thoroughly. Bo Pang and Lillian Lee explored a multiclass approach to categorizing movie reviews as either positive, average or negative. They used support vector machines and a one versus all separation in order to classify each review \cite{Pang:2005:SSE:1219840.1219855}. That research expanded a traditional binary classification into a multivalued problem. 
 
-In a separate field, Saxena explored applying a data mining techniques to screen resumes as part of a job application. In this case, the author explains that as the internet has become more popular, people are able to apply to many more jobs thus online job postings become flooded with resumes. To parse through these, they should apply several information retervial techniques but this paper focused on skills extraction, finding unique features and dealing with the specific setting of the resume. They had mixed results and concluced that more research would be required to find a more confident parser \cite{Charul}.
+In a separate field, Saxena explored applying data mining techniques to screen resumes as part of a job application. In this case, Saxena explains that as the internet becomes more popular, people are able to apply to many more jobs, flooding online job postings with resumes. To parse through these resumes, companies can apply several information retrieval techniques. Saxena focuses on skills extraction, finding unique features and dealing with the specific setting of the resume. They experienced lackluster results and concluded that more research would be required to create a more confident parser \cite{Charul}.
 
-Lastly, Pivotal, a data sciences research company, attempted a script reviewer with success. They extracted information from scripts that included speaker and scene delegation, for which the did extensive feature engineering. For example, they were able to distill the personalities of speakers via topic modeling and that feature engineering and include this with their linear model \cite{Pivotal}. However, the authors did not reveal more intimate details of their modeling and approach.  
+Lastly, Pivotal, a data sciences research company, formulated a script reviewer with success. They extracted information from television scripts which included speaker and scene delegation and applied extensive feature engineering. For example, they were able to determine personalities of speakers via topic modeling and include these variables in their ElasticNet regression model \cite{Pivotal}. However, the authors did not reveal details of their modeling and approach since it was a proprietary project for a television producing client.  
 
+\hfill \break
 \section{Method Overview}
-Our model follows a standard pipelined approach and employs 10 fold cross validation to justify the results.
+Our model follows a standard pipelined approach and employs 10 fold cross validation to validate results.
 
 \subsection{Data Parsing}
-To clean the text, we followed a standard text mining pipeline, stemming, tokenizing and removing stop words. This removes any words that are too frequent to be meaningful in predicting the outcome of episodes. It also combines the forms of words that could be used in different moods and tenses.
+To clean the text, we follow a standard text mining pipeline of stemming, tokenizing and removing stop words. This process removes any words that are too frequent to be meaningful in predicting the outcome of an episode. Stemming combines words of different tenses and uses to further decrease the vector space model.
 
-The two response variables we used were again the IMDb mean rating for the episode and the Nielsen rating for viewership rating. For the IMDb rating, we paired the episode with its corresponding rating. The rating of the episode should stand on its own since it could come days weeks or years after the actual episode airs. Our claim here is that the rating is independent of the timing of the episodes air. However, for the Nielsen rating, it would not make sense to pair the episodes viewership with the actual episode. Consider someone watching the show. That person has already come to the decision to watch the show independent of the script because it is unfolding before them. We, instead, map the next episodes viewership with that episode; moreover, Script$_i$ corresponds to Viewership$_{i+1}$. We model it that way because if a person were to watch an episode, enjoy watching it because of the script and then be more likely to watch the next one. In this case, we capture the temporal aspect of the airing.
+The two response variables are the IMDb mean rating for the episode and the Nielsen rating for viewership rating. For the IMDb rating, we paired each episode with its corresponding rating. The rating of the episode should stand on its own since it could come days weeks or years after the actual episode airs. Our claim here is that the rating is independent of the timing of the episodes air. However, for the Nielsen rating, it would not make sense to pair the episodes viewership with the actual episode. Consider someone watching the show. That person has already come to the decision to watch the show independent of the script since it is unfolding before them. We, instead, map the following episode's viewership with that episode; moreover, Script$_i$ corresponds to Viewership$_{i+1}$. We chose this approach assuming that if a person were to watch an episode and enjoy the script, then they may be more likely to watch the next episode. In this case, we captured the temporal aspect of the airing.
 
 \subsection{Regression Inputs}
-We explored two options as inputs to our regression model. One TF-IDF and one topic model. We use input
+We explored two options as predictive inputs to our regression model: a TF-IDF vector space model and a topic model.
 \subsubsection{TF-IDF}
-Term Frequency - Inverse Document Frequency (TF-IDF) is a way of weighting tokens in language model so as to highlight import words. It weights the number of times a word appears in a document (the Term Frequency) by the inverse of the number of documents that word appears in all documents in the training set. So two examples, a stop word like 'a' will appear in every single document. A typical IDF metric will force that value to result in a 0 thus removing the term from our model. 
+Term Frequency - Inverse Document Frequency (TF-IDF) is a method of weighting tokens in a language model so as to highlight import words. It weights the number of times a word appears in a document (the Term Frequency) by the inverse of the number of documents that word appears in all documents in the training set. So for example, a stop word like 'a' will appear in every single document. A typical IDF metric will force that value to result in a 0 thus removing the term from our model. 
 
 Our input matrix to the regression equation is a document term matrix where the values in each cell are that weighted TF-IDF value.
 
 \subsubsection{Topic Modeling}
 Latent Dirichlet Allocation (LDA) is a generative language model used to formulate topics from a document corpus. For each document in the corpus, the LDA model provides a vector of probabilities representing how likely each topic applies to that document. This allows each document to contain multiple topics, mirroring the complexity of a single sitcom episode.
+
 \subsection{Model Validation}
-We followed a testing procedure based on 10 fold cross validation. In this procedure we compared our regression model, built on each training fold, with the mean of the response, again on the training fold. We use our model to predict the response on the test set and compare it to the mean of the response on the training set. Then using a two sample t test to make the claim that our model exceeds the performance of the mean.
+We followed a testing procedure based on 10 fold cross validation. In this procedure we compared our regression model, built on each training fold, with the mean of the response, again on the training fold. We use our model to predict the response on the test set and compare it to the mean of the response on the training set. Then we employ a two sample t-test to determine whether our model exceeds the performance of the mean.
 
 \begin{equation}
 t^* = \frac{\bar{Y}_1 - \bar{Y}_2}{\sqrt{s_1^2/N_1 + s_2^2/N_2}}
 \end{equation}
 
 \section{Results}
-Our null hypothesis again was that the model performed just as well as the mean and our alternate hypothesis is that the model outperforms the mean in terms of mean squared error. 
+Our null hypothesis was that the model performed just as well as the mean and our alternate hypothesis is that the model outperforms the mean in terms of mean squared error. 
 \begin{center}
 \begin{tabular}{|r | r || r | r | r|} \hline
 % IMDb mean 0.134 mode 0.175 -1.713
@@ -215,7 +217,7 @@ LDA & Nielsen & 45.858 & 44.872 & 0.096 \\ \hline
 
 \section{Analysis}
 
-Our model did not outperform the mean in any of the four tests by a statistical margin. In TF-IDF in fact underperformed the mean. Our topic modeling did out perform the mean by a small margin but so small that the t value is almost zero. This shows that, by these two inputs the topics of the episode and the words used in the episode, are no stronger than a naive approach of guessing the viewership and rating. Since these did not show a stronger correlation we do not recommend using these values as predictors to a regression model.
+Our model did not outperform the mean in any of the four tests by a statistical margin. Our TF-IDF model underperformed the mean. Our topic modeling did outperform the mean by a small margin but so small that the t-value is nearly zero. This indicates that a model based on the topics of the episode and the words used in the episode, is not more effective than a naive approach of guessing the viewership and rating by mean. Since the results did not show a stronger correlation, we do not recommend using only these values as predictors to a regression model.
 
 \section{Future Work}
 
@@ -223,9 +225,8 @@ Although our modeling results indicate that there may not be a relationship betw
 
 Our model was trained on a small sample size of around 250 sitcom scripts. In the future, we would like supplement our model with a larger training set of documents. Training an LDA model with a larger dataset could result in more meaningful topics that could be significant to the linear model.
 
-Future work could also include exploring other modeling techniques. Pivotal implemented an ElasticNet regression model to significant variables (indicated by a linear model applied to each variable). Alternatively, we could explore this topic as a classification problem by binning episodes into categories. In this case, we could apply SVM, a method that proved to be successful by Pang and Lee when classifying multiclass ratings \cite{Pang:2005:SSE:1219840.1219855}.
-
-
+Future work could also include exploring other modeling techniques. Pivotal implemented an ElasticNet regression model to significant variables (indicated by a linear model applied to each variable). Alternatively, we could explore this topic as a classification problem by binning episodes into categories. In this case, we could apply SVM, a method that proved to be successful by Pang and Lee when classifying multiclass ratings \cite{Pang:2005:SSE:1219840.1219855}.\hfill \break
+\hfill \break
 
 \bibliographystyle{abbrv}
 \bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
